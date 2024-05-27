@@ -1,0 +1,31 @@
+﻿@model List<Category>
+
+<h2>All categor</h2>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if(!Model.Any()){
+                <tr>
+                    <td colspan="2">
+                        <div class="alert alert-warning alert-dismissible">
+			                <h5><i class="carousel-control-next-icon fas fa-exclamation-triangle"></i>Alert!</h5>
+                            no data found
+                        </div>
+                    </td>
+                </tr>
+            }
+            @foreach(var item in @Model)
+            {
+                <tr>
+                    <th scope="row">@item.Id</th>
+                    <td>@item.Name</td>
+                </tr>
+            }
+        </tbody>
+    </table>

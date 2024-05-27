@@ -138,3 +138,4 @@ D:\Web\Full-Stack\Back-end\MVC_Project\code\BookStore\BookStore\obj\Debug\net8.0
 D:\Web\Full-Stack\Back-end\MVC_Project\code\BookStore\BookStore\obj\Debug\net8.0\BookStore.pdb
 D:\Web\Full-Stack\Back-end\MVC_Project\code\BookStore\BookStore\obj\Debug\net8.0\BookStore.genruntimeconfig.cache
 D:\Web\Full-Stack\Back-end\MVC_Project\code\BookStore\BookStore\obj\Debug\net8.0\ref\BookStore.dll
+D:\Web\Full-Stack\Back-end\MVC_Project\code\BookStore\BookStore\obj\Debug\net8.0\BookStore.sourcelink.json
