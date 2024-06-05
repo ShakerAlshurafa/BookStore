@@ -23,6 +23,9 @@
     <!-- Libraries Stylesheet -->
     <link href="/Dashboard/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="/Dashboard/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+   
+    <!-- Theme Style-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.11.0/sweetalert2.min.css" integrity="sha512-OWGg8FcHstyYFwtjfkiCoYHW2hG3PDWwdtczPAPUcETobBJOVCouKig8rqED0NMLcT9GtE4jw6IT1CSrwY87uw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -60,7 +63,9 @@
                 </div>
                 <div class="navbar-nav w-100">
                     <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <a href="/Categories/Index" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Categories</a>
+                    <a asp-controller="Categories" asp-action="Index" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Categories</a>
+                    <a asp-controller="Authors" asp-action="Index" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Authors</a>
+                    <a asp-controller="Books" asp-action="Index" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Books</a>
                     <!--
 					<div class="nav-item dropdown">
 						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
@@ -173,6 +178,8 @@
 
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
+                    <h2>@RenderSection("Title")</h2>
+                    @RenderSection("Buttons",false)
                     @RenderBody()
                 </div>
             </div>
@@ -215,6 +222,10 @@
 
     <!-- Template Javascript -->
     <script src="/Dashboard/js/main.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.11.0/sweetalert2.min.js" integrity="sha512-Wi5Ms24b10EBwWI9JxF03xaAXdwg9nF51qFUDND/Vhibyqbelri3QqLL+cXCgNYGEgokr+GA2zaoYaypaSDHLg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    @RenderSection("Scripts",false);
 </body>
 
 </html>

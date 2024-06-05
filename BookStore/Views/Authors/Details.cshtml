@@ -1,0 +1,24 @@
+﻿@using BookStore.ViewModel
+@model AuthorVM
+@section Title {
+Author Details
+}
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th>Created At</th>
+            <th>Updated At</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">@Model.Id</th>
+            <td>@Model.Name</td>
+            <td>@Model.CreatedOn</td>
+            <td>@Model.UpdatedOn</td>
+        </tr>
+    </tbody>
+</table>

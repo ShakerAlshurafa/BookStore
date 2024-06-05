@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6VLrAItkTjuoCkiIsZ2GX/I9I0zvS8LfQANzO/0pU/s=",
+  "Hash": "IZ6Kk8+2rMjYgcDePvSA+d+O9Ho4mgd4+O3irvliCjU=",
   "Source": "BookStore",
   "BasePath": "_content/BookStore",
   "Mode": "Default",
@@ -1687,6 +1687,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\Web\\Full-Stack\\Back-end\\MVC_Project\\code\\BookStore\\BookStore\\wwwroot\\img\\books\\شعار خضوري.jpg",
+      "SourceId": "BookStore",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Web\\Full-Stack\\Back-end\\MVC_Project\\code\\BookStore\\BookStore\\wwwroot\\",
+      "BasePath": "_content/BookStore",
+      "RelativePath": "img/books/شعار خضوري.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\books\\شعار خضوري.jpg"
     },
     {
       "Identity": "D:\\Web\\Full-Stack\\Back-end\\MVC_Project\\code\\BookStore\\BookStore\\wwwroot\\img\\testimonial-1.jpg",

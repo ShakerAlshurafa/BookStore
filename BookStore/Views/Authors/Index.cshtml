@@ -1,0 +1,85 @@
+﻿@using BookStore.ViewModel
+@model List<AuthorVM>
+@section Title {
+All Authors
+}
+@section Buttons {
+    <a asp-controller="Authors" asp-action="Create" class="text-white text-decoration-none btn btn-primary w-25 ms-auto">Create</a>
+}
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (!Model.Any())
+        {
+            <tr>
+                <td colspan="2">
+                    <div class="alert alert-warning alert-dismissible">
+                        <h5><i class="carousel-control-next-icon fas fa-exclamation-triangle"></i>Alert!</h5>
+                        no data found
+                    </div>
+                </td>
+            </tr>
+        }
+        @foreach (var item in @Model)
+        {
+            <tr>
+                <th scope="row">@item.Id</th>
+                <td>@item.Name</td>
+                <td>
+                    <a class="btn btn-sm btn-primary" asp-controller="Authors" asp-action="Edit" asp-route-id="@item.Id">
+                        <i class="fas fa-edit"> Edit</i>
+                    </a>
+                    <a class="btn btn-sm btn-info" asp-controller="Authors" asp-action="Details" asp-route-id="@item.Id">
+                        <i class="fas fa-info-circle"> Details</i>
+                    </a>
+                    <a class="btn btn-sm btn-danger js-delete" data-id="@item.Id" href="#">
+                        <i class="fas fa-trash"> Delete</i>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+@section Scripts {
+    <script>
+        document.querySelectorAll(".js-delete").forEach((element) => {
+            element.addEventListener("click", async () => {
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "You won't be able to revert this!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Yes, delete it!"
+                }).then(async (result) => {
+                    if (result.isConfirmed) {
+                        // const id = element.getAttribute("data-id");
+                        // dataset we use it when we use custom attribute --> (data-id)
+                        const id = element.dataset.id;
+                        const response = await fetch(`/Authors/Delete/${id}`, {
+                            method: 'Post'
+                        });
+                        if (response.ok) {
+                            element.closest("tr").remove();
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your file has been deleted.",
+                                icon: "success"
+                            });
+                        }
+                    }
+                });
+            })
+        })
+    </script>
+}

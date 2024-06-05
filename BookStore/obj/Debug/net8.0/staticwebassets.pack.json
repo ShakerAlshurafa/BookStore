@@ -109,6 +109,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\Web\\Full-Stack\\Back-end\\MVC_Project\\code\\BookStore\\BookStore\\wwwroot\\img\\books\\شعار خضوري.jpg",
+      "PackagePath": "staticwebassets\\img\\books\\شعار خضوري.jpg"
+    },
+    {
       "Id": "D:\\Web\\Full-Stack\\Back-end\\MVC_Project\\code\\BookStore\\BookStore\\wwwroot\\img\\testimonial-1.jpg",
       "PackagePath": "staticwebassets\\img\\testimonial-1.jpg"
     },
