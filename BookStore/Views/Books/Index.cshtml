@@ -4,7 +4,10 @@
 All Books
 }
 @section Buttons {
-    <a asp-controller="Books" asp-action="Create" class="text-white text-decoration-none btn btn-primary w-25 ms-auto">Create</a>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <a asp-controller="Books" asp-action="Create" class="text-white text-decoration-none btn btn-primary w-25 ms-auto">Create</a>
+    }
 }
 
 <table class="table table-hover">
@@ -17,7 +20,10 @@ All Books
             <th scope="col">publish Date</th>
             <th scope="col">Categories</th>
             <th scope="col">Image</th>
-            <th scope="col">Action</th>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <th scope="col">Action</th>
+            }
         </tr>
     </thead>
     <tbody>
@@ -42,14 +48,17 @@ All Books
                 <td>@item.publishDate</td>
                 <td>@string.Join(", ",item.Categories)</td>
 				<td><img src="/img/books/@item.ImageUrl" width="50px" /></td>
-                <td>
-                    <a class="btn btn-sm btn-info" asp-controller="Books" asp-action="Details" asp-route-id="@item.Id">
-                        <i class="fas fa-info-circle"> Details</i>
-                    </a>
-                    <a class="btn btn-sm btn-danger js-delete" data-id="@item.Id" href="#">
-                        <i class="fas fa-trash"> Delete</i>
-                    </a>
-                </td>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <td>
+                        <a class="btn btn-sm btn-info" asp-controller="Books" asp-action="Details" asp-route-id="@item.Id">
+                            <i class="fas fa-info-circle"> Details</i>
+                        </a>
+                        <a class="btn btn-sm btn-danger js-delete" data-id="@item.Id" href="#">
+                            <i class="fas fa-trash"> Delete</i>
+                        </a>
+                    </td>
+                }
             </tr>
         }
     </tbody>

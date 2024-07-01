@@ -1,0 +1,43 @@
+﻿@using BookStore.ViewModel
+@model List<ApplicationUserVM>
+@section Title {
+Users
+}
+@section Buttons {
+    <a asp-controller="Users" asp-action="Create" class="text-white text-decoration-none btn btn-primary w-25 ms-auto">Create</a>
+}
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">User Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Address</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">Roles</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (!Model.Any())
+        {
+            <tr>
+                <td colspan="2">
+                    <div class="alert alert-warning alert-dismissible">
+                        <h5><i class="carousel-control-next-icon fas fa-exclamation-triangle"></i>Alert!</h5>
+                        no data found
+                    </div>
+                </td>
+            </tr>
+        }
+        @foreach (var item in @Model)
+        {
+            <tr>
+                <td>@item.UserName</td>
+                <td>@item.Email</td>
+                <td>@item.Address</td>
+                <td>@item.PhoneNumber</td>
+                <td>@string.Join(", ", item.Roles)</td>
+            </tr>
+        }
+    </tbody>
+</table>

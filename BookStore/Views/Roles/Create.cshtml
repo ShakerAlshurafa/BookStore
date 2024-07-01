@@ -1,0 +1,23 @@
+﻿@using BookStore.ViewModel
+@model RoleVM
+@section Title {
+Roles
+}
+
+
+
+<div class="card mx-auto w-75 pt-3 pb-4 bg-info">
+	<h3 class="text-center">Create Role</h3>
+	<form asp-controller="Roles">
+		<div class="card-body">
+			<div class="form-group">
+				<label asp-for="Name"></label>
+				<input type="text" class="form-control" asp-for="Name" />
+				<span asp-validation-for="Name" class="text-danger"></span>
+			</div>
+		</div>
+		<div class="card-footer text-center mt-2">
+			<button type="submit" class="btn btn-primary w-25">Add</button>
+		</div>
+	</form>
+</div>

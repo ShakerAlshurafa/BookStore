@@ -1,0 +1,35 @@
+﻿@using BookStore.ViewModel
+@model List<RoleVM>
+@section Title {
+Roles
+}
+@section Buttons {
+    <a asp-controller="Roles" asp-action="Create" class="text-white text-decoration-none btn btn-primary w-25 ms-auto">Create</a>
+}
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (!Model.Any())
+        {
+            <tr>
+                <td colspan="2">
+                    <div class="alert alert-warning alert-dismissible">
+                        <h5><i class="carousel-control-next-icon fas fa-exclamation-triangle"></i>Alert!</h5>
+                        no data found
+                    </div>
+                </td>
+            </tr>
+        }
+        @foreach (var item in @Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>
